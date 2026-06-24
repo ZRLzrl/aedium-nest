@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(json.dumps\\({k:v for k,v in d.items\\(\\) if k in \\('exports','main','types','module'\\)}, indent=2\\)\\)\")",
+      "Bash(pnpm migration:create *)",
+      "Bash(lsof -ti:3000)",
+      "Bash(xargs kill -9)",
+      "Bash(pnpm start:dev *)",
+      "Bash(node *)",
+      "Bash(npx eslint *)",
+      "Bash(pnpm migration:fresh *)",
+      "Bash(npx *)",
+      "Bash(pnpm ls *)",
+      "Bash(pnpm exec *)",
+      "Bash(npm view *)",
+      "Bash(MIKRO_ORM_CLI_TS_LOADER=oxc pnpm exec *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(NODE_OPTIONS=\"--experimental-require-module\" pnpm exec mikro-orm migration:fresh --seed --config mikro-orm.config.mjs)",
+      "Bash(MIKRO_ORM_CLI_TS_LOADER=nonexistent node *)"
+    ]
+  }
+}
