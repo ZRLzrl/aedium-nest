@@ -5,7 +5,12 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+    logger:
+      process.env.NODE_ENV !== 'production'
+        ? ['log', 'error', 'warn', 'debug', 'verbose']
+        : [],
+  });
   const PORT = Number(process.env.PORT);
 
   // 全局管道管道

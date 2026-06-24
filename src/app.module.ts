@@ -2,7 +2,7 @@ import { MikroOrmModule } from '@mikro-orm/nestjs';
 import { Module } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
 
-import mikroOrmConfig from '../mikro-orm.config';
+import mikroOrmConfig from './mikro-orm.config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ArticlesModule } from './articles/articles.module';

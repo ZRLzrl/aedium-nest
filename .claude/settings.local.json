@@ -16,7 +16,9 @@
       "Bash(MIKRO_ORM_CLI_TS_LOADER=oxc pnpm exec *)",
       "Bash(echo \"exit: $?\")",
       "Bash(NODE_OPTIONS=\"--experimental-require-module\" pnpm exec mikro-orm migration:fresh --seed --config mikro-orm.config.mjs)",
-      "Bash(MIKRO_ORM_CLI_TS_LOADER=nonexistent node *)"
+      "Bash(MIKRO_ORM_CLI_TS_LOADER=nonexistent node *)",
+      "Bash(pnpm build *)",
+      "Bash(pnpm start:prod *)"
     ]
   }
 }

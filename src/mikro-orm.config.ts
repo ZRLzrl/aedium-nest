@@ -29,12 +29,12 @@ export default defineConfig({
   // Glob patterns for TypeScript source files (used in development)
   entitiesTs: ['src/**/*.entity.ts'],
   // enable debug mode to log SQL queries and discovery information
-  debug: true,
+  debug: process.env.NODE_ENV !== 'production',
 
   extensions: [Migrator, SeedManager],
 
   seeder: {
-    path: './seeders', // path to the folder with seeders
+    path: '../seeders', // path to the folder with seeders
     pathTs: undefined, // path to the folder with TS seeders (if used, you should put path to compiled files in `path`)
     defaultSeeder: 'DatabaseSeeder', // default seeder class name
     glob: '!(*.d).{js,ts}', // how to match seeder files (all .js and .ts files, but not .d.ts)
