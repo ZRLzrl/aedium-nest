@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    container_name: aedium-nest
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - JWT_ACCESS_SECRET=${JWT_ACCESS_SECRET:-FKJnXq5mhie0vGIjIr9jmdJ7juUMoj6Yu2bFefSD}
+      - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET:-nc0DDAT8prX2l1oCKPkpcoSItC1UGxi95mjwpMAY}
+      - ORM_HOST=${ORM_HOST:-ep-green-glitter-aoayqhev-pooler.c-2.ap-southeast-1.aws.neon.tech}
+      - ORM_PORT=${ORM_PORT:-5432}
+      - ORM_NAME=${ORM_NAME:-neondb}
+      - ORM_USER=${ORM_USER:-neondb_owner}
+      - ORM_PASSWORD=${ORM_PASSWORD:-npg_ktXwi68NCAHr}
+    restart: unless-stopped
