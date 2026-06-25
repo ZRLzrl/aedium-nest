@@ -34,8 +34,8 @@ export default defineConfig({
   extensions: [Migrator, SeedManager],
 
   seeder: {
-    path: 'seeders',
-    pathTs: 'src/seeders',
+    path: '../seeders',
+    pathTs: undefined,
     defaultSeeder: 'DatabaseSeeder',
     glob: '!(*.d).{js,ts}',
     emit: 'ts',
